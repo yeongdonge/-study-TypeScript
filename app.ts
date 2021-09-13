@@ -1,17 +1,41 @@
-let studentID:number = 12345;
-let stduentName:string = "Jenny Kim";
-let age:number = 21;
-let gender:string = "female";
-let subject:string = "Javascript";
-let courseCompleted:boolean = false;
+let studentID: number = 12345
+let studentName: string = 'Dongyeong Kim';
+let age: number = 24;
+let gender: string = 'male';
+let subject: string = 'Javascript';
+let courseCompleted: boolean = false;
 
-function getStudentDetails(stduentID: number):{
-    studentID: number;
+interface Student {
+    readonly studentID: number;
     studentName: string;
-    age: number;
+    age?: number;
     gender: string;
     subject: string;
-    createDate: Date;
-} {
-    return null;
+    courseCompleted: boolean;
+   // addComment (comment: string): string;
+    addComment?: (comment: string) => string;
 }
+
+function getStudentDetails(studentID: number): Student
+{
+    return {
+        studentID: 12345,
+        studentName: 'Kim',
+        age: 24,
+        gender : 'male',
+        subject: 'TypeScript',
+        courseCompleted: true
+    };
+}
+
+function saveStudentDetails(student: Student): void {
+}
+
+saveStudentDetails({
+    studentID: 12345,
+    studentName: 'Kim',
+    age: 24,
+    gender : 'male',
+    subject: 'TypeScript',
+    courseCompleted: true
+})
